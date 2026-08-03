@@ -57,9 +57,10 @@ export function ShopProvider({ children }: { children: ReactNode }) {
       addToCart: (item) =>
         setCart((prev) => {
           const i = prev.findIndex((p) => p.id === item.id && p.size === item.size && p.color === item.color);
-          if (i > -1) {
+          const existing = prev[i];
+          if (existing) {
             const next = [...prev];
-            next[i] = { ...next[i], qty: next[i].qty + item.qty };
+            next[i] = { ...existing, qty: existing.qty + item.qty };
             return next;
           }
           return [...prev, item];
