@@ -184,7 +184,7 @@ function ProductPage() {
                 type="button"
                 disabled={product.stock === 0}
                 onClick={add}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
+                className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-5 py-3.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
               >
                 <ShoppingBag className="size-4" />
                 افزودن به سبد خرید
