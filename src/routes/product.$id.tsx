@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Layout } from "@/components/velora/Layout";
 import { ProductCard } from "@/components/velora/ProductCard";
-import { categoryName, formatPrice, getProduct, relatedProducts } from "@/lib/products";
+import { categoryName, formatPrice, getProduct, relatedProducts, type Product } from "@/lib/products";
 import { useShop } from "@/lib/shop-store";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/product/$id")({
 });
 
 function ProductPage() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const { addToCart, toggleWishlist, isWished } = useShop();
   const [active, setActive] = useState(0);
   const [size, setSize] = useState(product.sizes[0] ?? "");
