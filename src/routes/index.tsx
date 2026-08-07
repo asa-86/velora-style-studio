@@ -32,9 +32,9 @@ function Home() {
     <Layout>
       {/* ==== Bento Hero ==== */}
       <section className="velora-container py-6 md:py-12">
-        <div className="grid auto-rows-min gap-4 md:grid-cols-6 md:gap-5">
+        <div className="grid auto-rows-min grid-cols-2 gap-4 md:grid-cols-6 md:gap-5">
           {/* Headline tile */}
-          <div className="fade-up ornament glass relative overflow-hidden rounded-[2rem] p-7 md:col-span-4 md:p-12">
+          <div className="fade-up ornament glass relative overflow-hidden rounded-[2rem] p-7 col-span-2 md:col-span-4 md:p-12">
             <span className="pointer-events-none absolute -left-16 -top-16 size-56 rounded-full bg-gold/20 blur-3xl" />
             <span className="pointer-events-none absolute -bottom-20 right-0 size-64 rounded-full bg-emerald-bright/15 blur-3xl" />
             <p className="text-gold-gradient relative text-[11px] font-bold tracking-[0.5em]">VELORA · SS۲۶</p>
@@ -69,7 +69,7 @@ function Home() {
           </div>
 
           {/* Hero image tile */}
-          <div className="fade-up relative overflow-hidden rounded-[2rem] shadow-lift md:col-span-2 md:row-span-2">
+          <div className="fade-up relative overflow-hidden rounded-[2rem] shadow-lift col-span-2 md:col-span-2 md:row-span-2">
             <img
               src={heroImage}
               alt="استایل کلکسیون جدید ولورا؛ پالتو کتان کرم و شلوار سبز تیره"
