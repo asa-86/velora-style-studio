@@ -1,14 +1,242 @@
-# Welcome to your Lovable project
+# Velora Style Studio
+
+پرامپت ساخت سایت فروشگاهی پوشاک Velora
+
+
+
+یک وب‌سایت فروشگاهی مدرن، لوکس و کاملاً ریسپانسیو برای برند پوشاک ولورا (Velora) طراحی و پیاده‌سازی کن.
+
+
+
+هویت بصری
+
+
+
+- رنگ‌بندی سایت را بر اساس لوگویی که لینکشو گذاشتم 
+
+https://uploadkon.ir/uploads/40d603_26IMG-20260803-043116-335.jpg
+
+ انتخاب کن. میشه حدود رنگ کرمی با سبز تیره. اگه خواستی خودت رنگ اضافه کن.
+
+- از همان رنگ‌ها برای دکمه‌ها، هدر، فوتر، لینک‌ها و المان‌های اصلی استفاده کن.
+
+- ظاهر سایت باید مینیمال، شیک و مناسب یک برند پوشاک باشد.
+
+- از فونت فارسی مدرن (مثل Vazirmatn یا Estedad) استفاده کن.
+
+- طراحی کاملاً Mobile First باشد.
+
+
+
+صفحات سایت
+
+
+
+- صفحه اصلی
+
+- فروشگاه
+
+- صفحه دسته‌بندی محصولات
+
+- صفحه جزئیات محصول
+
+- جستجوی محصولات
+
+- تماس با ما
+
+- صفحه 404
+
+
+
+صفحه اصلی
+
+
+
+در صفحه اصلی این بخش‌ها وجود داشته باشد:
+
+
+
+- هدر حرفه‌ای با لوگو، منو و آیکون جستجو
+
+باقیش به سلیقه خودت به شدت زیبا باشه
+
+- فوتر کامل
+
+
+
+محصولات
+
+
+
+هر محصول شامل:
+
+
+
+- چند تصویر
+
+- نام
+
+- قیمت
+
+- توضیحات
+
+- سایزبندی
+
+- رنگ‌بندی
+
+- موجودی
+
+- دکمه افزودن به سبد خرید
+
+- محصولات مرتبط
+
+
+
+امکانات فروشگاه
+
+
+
+- جستجوی لحظه‌ای
+
+- فیلتر بر اساس قیمت
+
+- فیلتر بر اساس سایز
+
+- فیلتر بر اساس رنگ
+
+- مرتب‌سازی محصولات
+
+- علاقه‌مندی‌ها
+
+- سبد خرید
+
+- محاسبه مجموع قیمت
+
+
+
+پرداخت
+
+
+
+فعلاً درگاه پرداخت پیاده‌سازی نشود.
+
+
+
+به جای دکمه پرداخت، دکمه‌ای با عنوان «ثبت سفارش» قرار بده که کاربر را به صفحه تماس هدایت کند.
+
+
+
+در صفحه تماس این متن نمایش داده شود:
+
+
+
+«برای ثبت سفارش، لطفاً از طریق اینستاگرام یا روبیکا با ما در ارتباط باشید.»
+
+
+
+آی‌دی‌ها:
+
+
+
+Instagram:
+
+@velora_styl.ir
+
+
+
+Rubika:
+
+@velora__shoop
+
+
+
+در بخش روبیکا نیز محلی برای قرار دادن لینک یا شناسه در نظر بگیر تا بعداً تکمیل شود.
+
+
+
+تصاویر محصولات
+
+
+
+فعلاً تصاویر محصولات را از تصاویر Placeholder باکیفیت مرتبط با پوشاک استفاده کن تا بعداً جایگزین شوند.
+
+
+
+طراحی
+
+
+
+- انیمیشن‌های نرم
+
+- اسکرول روان
+
+- Hover زیبا
+
+- کارت محصولات مدرن
+
+- آیکون‌های مناسب
+
+- طراحی لوکس و حرفه‌ای
+
+
+
+سئو
+
+
+
+- HTML معنایی
+
+- Meta Tags
+
+- Open Graph
+
+- ساختار مناسب Headingها
+
+- Lazy Loading تصاویر
+
+- بهینه‌سازی سرعت
+
+
+
+تکنولوژی
+
+
+
+- React + TypeScript
+
+- Tailwind CSS
+
+- کامپوننت‌های قابل استفاده مجدد
+
+- ساختار پروژه تمیز
+
+- ریسپانسیو کامل برای موبایل، تبلت و دسکتاپ
+
+
+
+نکات مهم
+
+
+
+- از هر رنگی خارج از پالت لوگو استفاده خواستی استفاده کن.
+
+- ظاهر سایت باید حس یک برند پوشاک باکیفیت و لوکس را منتقل کند.
+
+- کدها تمیز، خوانا و استاندارد باشند.
+
+- تمام متن‌ها فارسی و راست‌چین (RTL) باشند.
+
+- قبل از شروع طراحی، رنگ‌های اصلی، فرعی و رنگ تأکیدی را از لوگوی آپلودشده استخراج و در کل رابط کاربری به‌صورت یکپارچه استفاده کن.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9dcd4ba4-1508-4683-87db-ed63ba0859f2).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +248,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
