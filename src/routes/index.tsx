@@ -103,7 +103,7 @@ function Home() {
           <Link
             to="/product/$id"
             params={{ id: spotlight.id }}
-            className="gradient-emerald card-hover group relative col-span-2 overflow-hidden rounded-[1.5rem] p-5 text-primary-foreground md:col-span-1"
+            className="gradient-emerald card-hover group relative overflow-hidden rounded-[1.5rem] p-5 text-primary-foreground md:col-span-1"
           >
             <Sparkles className="float-slow size-6 text-gold-light" />
             <p className="mt-3 text-xs text-primary-foreground/70">ستاره کلکسیون</p>
