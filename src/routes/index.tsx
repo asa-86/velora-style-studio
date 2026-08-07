@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Instagram, Scissors, Sparkles, Truck } from "lucide-react";
 import { Layout } from "@/components/velora/Layout";
 import { ProductCard } from "@/components/velora/ProductCard";
-import { categories, products } from "@/lib/products";
+import { categories, formatPrice, products } from "@/lib/products";
 import heroImage from "@/assets/velora-hero.jpg";
 
 export const Route = createFileRoute("/")({
@@ -26,111 +26,140 @@ export const Route = createFileRoute("/")({
 function Home() {
   const featured = products.filter((p) => p.badge).slice(0, 4);
   const newest = products.slice(4, 8);
+  const spotlight = products.find((p) => p.id === "velora-dress-emerald") ?? products[0]!;
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-sand">
-        <div className="velora-container grid items-center gap-8 py-12 md:grid-cols-2 md:py-20">
-          <div className="fade-up">
-            <p className="text-xs tracking-[0.4em] text-muted-foreground">VELORA · SS26</p>
-            <h1 className="mt-5 text-3xl font-extrabold leading-tight md:text-5xl">
-              پوشاکی که <span className="text-primary">آرامش</span> را می‌پوشد
+      {/* ==== Bento Hero ==== */}
+      <section className="velora-container py-6 md:py-12">
+        <div className="grid auto-rows-min gap-4 md:grid-cols-6 md:gap-5">
+          {/* Headline tile */}
+          <div className="fade-up ornament glass relative overflow-hidden rounded-[2rem] p-7 md:col-span-4 md:p-12">
+            <span className="pointer-events-none absolute -left-16 -top-16 size-56 rounded-full bg-gold/20 blur-3xl" />
+            <span className="pointer-events-none absolute -bottom-20 right-0 size-64 rounded-full bg-emerald-bright/15 blur-3xl" />
+            <p className="text-gold-gradient relative text-[11px] font-bold tracking-[0.5em]">VELORA · SS۲۶</p>
+            <h1 className="relative mt-5 text-3xl font-extrabold leading-[1.35] md:text-6xl">
+              زمرد را
+              <span className="mx-2 inline-block bg-primary px-3 py-1 text-primary-foreground [border-radius:1rem_0.25rem_1rem_0.25rem]">
+                بپوش
+              </span>
+              <br />
+              درخشش را زندگی کن
             </h1>
-            <p className="mt-5 max-w-md text-sm leading-8 text-muted-foreground md:text-base">
-              کلکسیون جدید ولورا با الهام از رنگ‌های طبیعت؛ کرِم گرم و سبز عمیق. پارچه‌های منتخب، دوخت دقیق و برش‌هایی که
-              روی هر اندامی زیبا می‌نشیند.
+            <p className="relative mt-6 max-w-xl text-sm leading-8 text-muted-foreground md:text-base">
+              کلکسیون جدید ولورا با الهام از سنگ زمرد و طلا؛ سبز عمیق، ایوُری گرم و جزئیاتی که در نور می‌درخشند. پارچه‌های
+              منتخب، دوخت دقیق و برش‌هایی که روی هر اندامی زیبا می‌نشیند.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="relative mt-8 flex flex-wrap gap-3">
               <Link
                 to="/shop"
-                className="group inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-soft transition-all hover:opacity-90"
+                className="group gradient-emerald gold-ring inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-gold-light transition-transform hover:-translate-y-1"
               >
                 مشاهده کلکسیون
-                <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
+                <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1.5" />
               </Link>
               <Link
                 to="/category/$slug"
                 params={{ slug: "dress" }}
-                className="rounded-md border border-primary/30 px-7 py-3.5 text-sm font-bold text-primary transition-colors hover:bg-primary/5"
+                className="rounded-full border border-gold/50 px-7 py-3.5 text-sm font-bold text-primary transition-all hover:-translate-y-1 hover:bg-secondary"
               >
                 لباس مجلسی
               </Link>
             </div>
-            <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 text-center">
-              {[
-                ["۱۰۰٪", "پارچه منتخب"],
-                ["۷ روز", "مهلت تعویض"],
-                ["۳۱", "استان ارسال"],
-              ].map(([v, l]) => (
-                <div key={l} className="rounded-md border border-border/70 bg-card/60 py-3">
-                  <dt className="text-base font-extrabold text-primary">{v}</dt>
-                  <dd className="mt-1 text-[11px] text-muted-foreground">{l}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-lg shadow-lift">
-              <img
-                src={heroImage}
-                alt="استایل کلکسیون جدید ولورا؛ پالتو کتان کرم و شلوار سبز تیره"
-                width={1408}
-                height={1760}
-                className="aspect-[4/5] w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-4 right-4 hidden rounded-md bg-card px-5 py-4 shadow-soft md:block">
-              <p className="text-xs text-muted-foreground">ست پیشنهادی هفته</p>
-              <p className="mt-1 text-sm font-bold text-primary">پالتو کتان + شلوار بگ</p>
+          {/* Hero image tile */}
+          <div className="fade-up relative overflow-hidden rounded-[2rem] shadow-lift md:col-span-2 md:row-span-2">
+            <img
+              src={heroImage}
+              alt="استایل کلکسیون جدید ولورا؛ پالتو کتان کرم و شلوار سبز تیره"
+              width={1408}
+              height={1760}
+              className="aspect-[4/5] size-full object-cover transition-transform duration-[1200ms] hover:scale-105 md:aspect-auto"
+            />
+            <div className="glass absolute inset-x-4 bottom-4 rounded-2xl p-4">
+              <p className="text-[11px] text-muted-foreground">ست پیشنهادی هفته</p>
+              <p className="mt-1 text-sm font-extrabold text-primary">پالتو کتان + شلوار بگ</p>
             </div>
           </div>
+
+          {/* Stat tiles */}
+          {[
+            ["۱۰۰٪", "پارچه منتخب"],
+            ["۷ روز", "مهلت تعویض"],
+            ["۳۱", "استان ارسال"],
+          ].map(([v, l], i) => (
+            <div
+              key={l}
+              className="glass card-hover rounded-[1.5rem] p-5 text-center md:col-span-1"
+              style={{ animation: `velora-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) ${0.1 * i + 0.2}s both` }}
+            >
+              <p className="text-xl font-extrabold text-primary md:text-2xl">{v}</p>
+              <p className="mt-1 text-[11px] text-muted-foreground">{l}</p>
+            </div>
+          ))}
+
+          {/* Spotlight tile */}
+          <Link
+            to="/product/$id"
+            params={{ id: spotlight.id }}
+            className="gradient-emerald card-hover group relative col-span-2 overflow-hidden rounded-[1.5rem] p-5 text-primary-foreground md:col-span-1"
+          >
+            <Sparkles className="float-slow size-6 text-gold-light" />
+            <p className="mt-3 text-xs text-primary-foreground/70">ستاره کلکسیون</p>
+            <p className="mt-1 truncate text-sm font-extrabold text-gold-light">{spotlight.name}</p>
+            <p className="mt-2 text-[11px] text-primary-foreground/70">{formatPrice(spotlight.price)}</p>
+          </Link>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="velora-container grid gap-4 py-10 md:grid-cols-3 md:py-14">
+      {/* ==== Values bento ==== */}
+      <section className="velora-container grid gap-4 py-8 md:grid-cols-3 md:gap-5 md:py-12">
         {[
           { icon: Scissors, title: "دوخت ایرانی", text: "تولید در کارگاه اختصاصی با کنترل کیفیت مرحله‌ای." },
-          { icon: Sparkles, title: "طراحی مینیمال", text: "برش‌های ساده و بی‌زمان که سال‌ها همراهتان می‌مانند." },
+          { icon: Sparkles, title: "طراحی فانتزی مینیمال", text: "برش‌های بی‌زمان با جزئیات درخشان و دست‌ساز." },
           { icon: Truck, title: "ارسال سریع", text: "بسته‌بندی شکیل و ارسال به تمام نقاط ایران." },
         ].map((f) => (
-          <div key={f.title} className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/40">
-            <f.icon className="size-6 text-primary" />
-            <h3 className="mt-4 text-base font-bold">{f.title}</h3>
+          <div key={f.title} className="glass card-hover group rounded-[1.75rem] p-7">
+            <span className="gradient-emerald grid size-12 place-items-center rounded-2xl">
+              <f.icon className="size-5 text-gold-light" />
+            </span>
+            <h3 className="mt-5 text-base font-extrabold">{f.title}</h3>
             <p className="mt-2 text-sm leading-7 text-muted-foreground">{f.text}</p>
           </div>
         ))}
       </section>
 
-      {/* Categories */}
+      {/* ==== Categories bento ==== */}
       <section className="velora-container py-8 md:py-12">
         <SectionHead title="دسته‌بندی‌ها" subtitle="از میان کلکسیون‌های ولورا انتخاب کنید" />
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-          {categories.map((c) => (
+        <div className="mt-8 grid auto-rows-[11rem] grid-cols-2 gap-4 md:auto-rows-[13rem] md:grid-cols-4 md:gap-5">
+          {categories.map((c, i) => (
             <Link
               key={c.slug}
               to="/category/$slug"
               params={{ slug: c.slug }}
-              className="group relative overflow-hidden rounded-lg"
+              className={`sheen card-hover group relative overflow-hidden rounded-[1.75rem] ${
+                i === 0 ? "col-span-2 row-span-2" : i === 3 ? "md:col-span-2" : ""
+              }`}
             >
               <img
                 src={c.image}
                 alt={c.name}
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:aspect-[3/2]"
+                className="size-full object-cover transition-transform duration-[1100ms] group-hover:scale-110"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 to-transparent" />
-              <span className="absolute bottom-4 right-4 text-base font-bold text-primary-foreground md:text-lg">
+              <span className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/20 to-transparent" />
+              <span className="absolute bottom-4 right-4 inline-flex items-center gap-2 text-base font-extrabold text-primary-foreground md:text-lg">
                 {c.name}
+                <ArrowLeft className="size-4 text-gold-light transition-transform group-hover:-translate-x-1.5" />
               </span>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Featured */}
+      {/* ==== Featured ==== */}
       <section className="velora-container py-8 md:py-12">
         <SectionHead title="منتخب ولورا" subtitle="پرفروش‌ترین و محدودترین محصولات این فصل" href="/shop" />
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -140,20 +169,23 @@ function Home() {
         </div>
       </section>
 
-      {/* Editorial band */}
-      <section className="mt-8 bg-forest text-primary-foreground">
-        <div className="velora-container grid gap-6 py-14 md:grid-cols-2 md:items-center">
-          <h2 className="text-2xl font-extrabold leading-relaxed md:text-3xl">
-            «لباس خوب، آرام است.»
-          </h2>
-          <p className="text-sm leading-8 text-primary-foreground/75">
-            در ولورا به‌جای دنبال‌کردن هر ترند، روی جزئیات کار می‌کنیم: کیفیت پارچه، ماندگاری رنگ، فرم‌گیری دوخت و
-            راحتی در طول روز. هر قطعه پیش از ارسال، دوباره بازرسی می‌شود.
-          </p>
+      {/* ==== Editorial band ==== */}
+      <section className="velora-container mt-10">
+        <div className="gradient-emerald ornament relative overflow-hidden rounded-[2.5rem] px-6 py-14 text-primary-foreground md:px-14">
+          <span className="pointer-events-none absolute -right-20 -top-24 size-72 rounded-full bg-gold/20 blur-3xl" />
+          <div className="relative grid gap-6 md:grid-cols-2 md:items-center">
+            <h2 className="text-2xl font-extrabold leading-relaxed md:text-4xl">
+              <span className="text-gold-gradient">«لباس خوب، آرام است.»</span>
+            </h2>
+            <p className="text-sm leading-8 text-primary-foreground/75">
+              در ولورا به‌جای دنبال‌کردن هر ترند، روی جزئیات کار می‌کنیم: کیفیت پارچه، ماندگاری رنگ، فرم‌گیری دوخت و
+              راحتی در طول روز. هر قطعه پیش از ارسال، دوباره بازرسی می‌شود.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* New arrivals */}
+      {/* ==== New arrivals ==== */}
       <section className="velora-container py-12 md:py-16">
         <SectionHead title="تازه‌رسیده‌ها" subtitle="جدیدترین قطعات اضافه‌شده به ویترین" href="/shop" />
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -163,16 +195,18 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ==== CTA ==== */}
       <section className="velora-container pb-4">
-        <div className="rounded-lg border border-primary/20 bg-sand p-8 text-center md:p-12">
-          <h2 className="text-xl font-extrabold md:text-2xl">ثبت سفارش با پیام مستقیم</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-muted-foreground">
+        <div className="glass ornament rounded-[2.5rem] p-8 text-center md:p-14">
+          <span className="text-gold-gradient text-[11px] font-bold tracking-[0.4em]">VELORA CONCIERGE</span>
+          <h2 className="mt-4 text-xl font-extrabold md:text-3xl">ثبت سفارش با پیام مستقیم</h2>
+          <span className="hairline mx-auto mt-5 block w-40" />
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-muted-foreground">
             سفارش‌ها فعلاً از طریق اینستاگرام و روبیکا ثبت می‌شود. کافیست سبد خریدتان را ببندید و برای ما پیام بدهید.
           </p>
           <Link
             to="/contact"
-            className="mt-7 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
+            className="gradient-emerald gold-ring mt-8 inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-gold-light transition-transform hover:-translate-y-1"
           >
             <Instagram className="size-4" />
             راه‌های ارتباطی
@@ -187,12 +221,15 @@ function SectionHead({ title, subtitle, href }: { title: string; subtitle: strin
   return (
     <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
       <div className="min-w-0">
-        <h2 className="text-xl font-extrabold md:text-2xl">{title}</h2>
+        <h2 className="text-xl font-extrabold md:text-3xl">{title}</h2>
         <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
         <span className="hairline mt-4 block w-24" />
       </div>
       {href === "/shop" && (
-        <Link to="/shop" className="shrink-0 text-sm font-bold text-primary transition-opacity hover:opacity-70">
+        <Link
+          to="/shop"
+          className="shrink-0 rounded-full border border-gold/40 px-4 py-2 text-xs font-bold text-primary transition-all hover:-translate-y-0.5 hover:bg-secondary md:text-sm"
+        >
           همه محصولات
         </Link>
       )}
