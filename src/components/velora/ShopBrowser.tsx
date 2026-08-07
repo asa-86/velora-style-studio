@@ -41,7 +41,7 @@ export function ShopBrowser({ items, maxPrice = 6000000 }: { items: Product[]; m
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="نام محصول..."
-          className="w-full rounded-md border border-input bg-card px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+          className="w-full rounded-full border border-gold/30 bg-card px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary"
         />
       </div>
 
@@ -68,7 +68,7 @@ export function ShopBrowser({ items, maxPrice = 6000000 }: { items: Product[]; m
               type="button"
               onClick={() => toggle(sizes, setSizes, s)}
               className={cn(
-                "min-w-11 rounded-md border px-3 py-1.5 text-xs transition-colors",
+                "min-w-11 rounded-full border px-3 py-1.5 text-xs transition-all hover:-translate-y-0.5",
                 sizes.includes(s) ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary",
               )}
             >
@@ -107,12 +107,12 @@ export function ShopBrowser({ items, maxPrice = 6000000 }: { items: Product[]; m
         <button
           type="button"
           onClick={() => setOpenFilters((v) => !v)}
-          className="flex w-full items-center justify-between rounded-md border border-border bg-card px-4 py-3 text-sm font-bold lg:hidden"
+          className="glass flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-bold lg:hidden"
         >
           فیلترها
           <SlidersHorizontal className="size-4" />
         </button>
-        <div className={cn("mt-4 rounded-lg border border-border bg-card p-5 lg:mt-0 lg:block", openFilters ? "block" : "hidden")}>
+        <div className={cn("glass mt-4 rounded-[1.75rem] p-6 lg:mt-0 lg:block", openFilters ? "block" : "hidden")}>
           {filters}
         </div>
       </aside>
@@ -124,7 +124,7 @@ export function ShopBrowser({ items, maxPrice = 6000000 }: { items: Product[]; m
             aria-label="مرتب‌سازی"
             value={sort}
             onChange={(e) => setSort(e.target.value as Sort)}
-            className="shrink-0 rounded-md border border-input bg-card px-3 py-2 text-sm outline-none focus:border-primary"
+            className="shrink-0 rounded-full border border-gold/30 bg-card px-4 py-2 text-sm outline-none focus:border-primary"
           >
             <option value="newest">جدیدترین</option>
             <option value="cheap">ارزان‌ترین</option>
@@ -134,7 +134,7 @@ export function ShopBrowser({ items, maxPrice = 6000000 }: { items: Product[]; m
         </div>
 
         {result.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-border py-16 text-center text-sm text-muted-foreground">
+          <p className="rounded-[1.75rem] border border-dashed border-gold/40 py-16 text-center text-sm text-muted-foreground">
             محصولی با این مشخصات پیدا نشد.
           </p>
         ) : (
