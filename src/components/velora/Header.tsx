@@ -48,9 +48,11 @@ export function Header() {
           </button>
 
           <Link to="/" className="flex min-w-0 items-center gap-2.5">
-            <span className="gradient-emerald grid size-10 shrink-0 place-items-center rounded-2xl text-sm font-bold text-gold-light gold-ring">
-              V
-            </span>
+            <img
+              src="public\favicon.ico"
+              alt=""
+              className="h-9 w-auto shrink-0 rounded"
+            />
             <span className="min-w-0">
               <span className="block truncate text-lg font-extrabold tracking-tight text-primary">ولورا</span>
               <span className="text-gold-gradient block text-[10px] font-bold tracking-[0.4em]">VELORA</span>
