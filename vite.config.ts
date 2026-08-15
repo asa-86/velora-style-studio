@@ -14,7 +14,6 @@ export default defineConfig({
     // The app has no server functions, so every route can be prerendered to
     // static HTML for plain static hosting.
     prerender: { enabled: true, crawlLinks: true },
-    spa: { enabled: true },
   },
   // Emit the deployable build into `dist/` instead of Nitro's default `.output/`.
   nitro: {
