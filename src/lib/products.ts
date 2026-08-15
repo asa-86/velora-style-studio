@@ -59,7 +59,7 @@ export const products: Product[] = [
   },
   {
     id: "velora-dress-emerald",
-    name: "لباس مجلسی امرالد",
+    name: "لباس مجلسی یاقوت",
     price: 4350000,
     category: "dress",
     description:
