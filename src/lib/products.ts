@@ -35,7 +35,7 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     colors: [
       { name: "کرمی", hex: "#E7DCC4" },
-      { name: "سبز تیره", hex: "#2C4034" },
+      { name: "زرشکی تیره", hex: "#4A1D28" },
       { name: "مشکی", hex: "#1B1B1B" },
     ],
     stock: 12,
@@ -52,21 +52,21 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     colors: [
       { name: "کرمی", hex: "#EFE6D2" },
-      { name: "زیتونی", hex: "#5C6B4B" },
+      { name: "شرابی", hex: "#6B3140" },
     ],
     stock: 7,
     images: [img("photo-1596755094514-f87e34085b2c"), img("photo-1434389677669-e08b4cac3105"), img("photo-1521572163474-6864f9cf17ab")],
   },
   {
     id: "velora-dress-emerald",
-    name: "لباس مجلسی امرالد",
+    name: "لباس مجلسی یاقوت",
     price: 4350000,
     category: "dress",
     description:
-      "لباس بلند مجلسی با رنگ سبز زمردی و برش بدن‌نما؛ دوخت دست، آستر کامل و جزئیات ظریف در یقه. مناسب مراسم‌های خاص.",
+      "لباس بلند مجلسی با رنگ قرمز یاقوتی و برش بدن‌نما؛ دوخت دست، آستر کامل و جزئیات ظریف در یقه. مناسب مراسم‌های خاص.",
     sizes: ["S", "M", "L"],
     colors: [
-      { name: "سبز زمردی", hex: "#20463A" },
+      { name: "قرمز یاقوتی", hex: "#8C1C2B" },
       { name: "شرابی", hex: "#5A2231" },
     ],
     stock: 4,
@@ -97,7 +97,7 @@ export const products: Product[] = [
       "شلوار بگ با کمر کشی پنهان و جیب کاربردی؛ پارچه مازراتی سنگین با ریزش زیبا. ست‌کردنی با تمام مانتوهای ولورا.",
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "سبز تیره", hex: "#2C4034" },
+      { name: "زرشکی تیره", hex: "#4A1D28" },
       { name: "بژ", hex: "#D9C9AC" },
     ],
     stock: 15,
@@ -113,7 +113,7 @@ export const products: Product[] = [
       "پالتو بلند با پارامتر فاستونی پشم‌دار، آستر ساتن و دو دکمه؛ گرمای بالا همراه با ظاهری لوکس برای زمستان.",
     sizes: ["M", "L", "XL"],
     colors: [
-      { name: "زیتونی", hex: "#4E5A3E" },
+      { name: "زرشکی", hex: "#5E2530" },
       { name: "کرمی", hex: "#E4D9BE" },
     ],
     stock: 5,
@@ -130,7 +130,7 @@ export const products: Product[] = [
     sizes: ["S", "M", "L"],
     colors: [
       { name: "مشکی", hex: "#1B1B1B" },
-      { name: "سبز تیره", hex: "#2C4034" },
+      { name: "زرشکی تیره", hex: "#4A1D28" },
     ],
     stock: 0,
     images: [img("photo-1485231183945-fffde7cc051e"), img("photo-1469334031218-e382a71b716b"), img("photo-1479064555552-3ef4979f8908")],
@@ -145,7 +145,7 @@ export const products: Product[] = [
     sizes: ["Free"],
     colors: [
       { name: "سفید صدفی", hex: "#F3EFE6" },
-      { name: "سبز روشن", hex: "#8C9A7B" },
+      { name: "صورتی کهنه", hex: "#C0808A" },
     ],
     stock: 9,
     images: [img("photo-1602810318383-e386cc2a3ccf"), img("photo-1519058082700-08a0b56da9b4"), img("photo-1520975954732-35dd22299614")],
@@ -175,7 +175,7 @@ export const products: Product[] = [
     sizes: ["S", "M"],
     colors: [
       { name: "کرمی", hex: "#EDE1C8" },
-      { name: "سبز تیره", hex: "#25392F" },
+      { name: "زرشکی تیره", hex: "#3F1A23" },
     ],
     stock: 6,
     images: [img("photo-1496747611176-843222e1e57c"), img("photo-1515372039744-b8f02a3ae446"), img("photo-1502716119720-b23a93e5fe1b")],
@@ -185,8 +185,8 @@ export const products: Product[] = [
 export const allSizes = ["S", "M", "L", "XL", "Free"];
 export const allColors = [
   { name: "کرمی", hex: "#E7DCC4" },
-  { name: "سبز تیره", hex: "#2C4034" },
-  { name: "زیتونی", hex: "#5C6B4B" },
+  { name: "زرشکی تیره", hex: "#4A1D28" },
+  { name: "شرابی", hex: "#6B3140" },
   { name: "مشکی", hex: "#1B1B1B" },
   { name: "بژ", hex: "#D9C9AC" },
   { name: "شکلاتی", hex: "#4A392C" },

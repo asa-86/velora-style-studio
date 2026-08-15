@@ -45,38 +45,39 @@
 
 :root {
   --radius: 1rem;
-  /* Velora — Emerald Prestige: deep emerald, bright jade, soft gold, warm ivory */
-  --background: oklch(0.975 0.014 92);
-  --foreground: oklch(0.24 0.045 165);
-  --card: oklch(0.995 0.006 92);
-  --card-foreground: oklch(0.24 0.045 165);
-  --popover: oklch(0.995 0.006 92);
-  --popover-foreground: oklch(0.24 0.045 165);
-  --primary: oklch(0.33 0.075 166);
-  --primary-foreground: oklch(0.98 0.014 92);
-  --secondary: oklch(0.945 0.024 92);
-  --secondary-foreground: oklch(0.3 0.06 166);
-  --muted: oklch(0.95 0.018 92);
-  --muted-foreground: oklch(0.5 0.03 165);
-  --accent: oklch(0.76 0.1 84);
-  --accent-foreground: oklch(0.24 0.05 165);
-  --destructive: oklch(0.52 0.18 25);
-  --destructive-foreground: oklch(0.98 0.01 88);
-  --border: oklch(0.9 0.02 92);
-  --input: oklch(0.9 0.02 92);
-  --ring: oklch(0.55 0.1 168);
-  --sand: oklch(0.955 0.026 90);
-  --forest: oklch(0.33 0.075 166);
-  --forest-deep: oklch(0.22 0.05 166);
-  --emerald-bright: oklch(0.55 0.11 168);
-  --gold: oklch(0.76 0.1 84);
-  --gold-light: oklch(0.87 0.075 88);
-  --shadow-soft: 0 1px 2px oklch(0.24 0.05 165 / 0.05), 0 10px 30px oklch(0.24 0.05 165 / 0.07);
-  --shadow-lift: 0 24px 60px -18px oklch(0.24 0.06 165 / 0.28);
-  --shadow-glow: 0 0 0 1px oklch(0.76 0.1 84 / 0.35), 0 18px 50px -20px oklch(0.55 0.11 168 / 0.45);
-  --gradient-emerald: linear-gradient(135deg, oklch(0.22 0.05 166), oklch(0.4 0.095 168) 55%, oklch(0.55 0.11 168));
-  --gradient-gold: linear-gradient(100deg, oklch(0.72 0.1 78), oklch(0.9 0.08 92) 45%, oklch(0.72 0.1 78));
+  /* Velora — Ruby Prestige: deep burgundy, bright crimson, soft gold, warm ivory */
+  --background: oklch(0.975 0.012 78);
+  --foreground: oklch(0.25 0.055 20);
+  --card: oklch(0.995 0.005 80);
+  --card-foreground: oklch(0.25 0.055 20);
+  --popover: oklch(0.995 0.005 80);
+  --popover-foreground: oklch(0.25 0.055 20);
+  --primary: oklch(0.36 0.115 18);
+  --primary-foreground: oklch(0.98 0.012 84);
+  --secondary: oklch(0.945 0.022 60);
+  --secondary-foreground: oklch(0.33 0.1 18);
+  --muted: oklch(0.95 0.016 62);
+  --muted-foreground: oklch(0.5 0.045 20);
+  --accent: oklch(0.77 0.1 78);
+  --accent-foreground: oklch(0.25 0.06 20);
+  --destructive: oklch(0.5 0.19 27);
+  --destructive-foreground: oklch(0.98 0.01 84);
+  --border: oklch(0.9 0.022 60);
+  --input: oklch(0.9 0.022 60);
+  --ring: oklch(0.55 0.16 20);
+  --sand: oklch(0.955 0.024 74);
+  --forest: oklch(0.36 0.115 18);
+  --forest-deep: oklch(0.24 0.08 18);
+  --emerald-bright: oklch(0.55 0.165 22);
+  --gold: oklch(0.77 0.1 78);
+  --gold-light: oklch(0.88 0.07 84);
+  --shadow-soft: 0 1px 2px oklch(0.25 0.06 20 / 0.05), 0 10px 30px oklch(0.25 0.06 20 / 0.08);
+  --shadow-lift: 0 24px 60px -18px oklch(0.28 0.09 20 / 0.3);
+  --shadow-glow: 0 0 0 1px oklch(0.77 0.1 78 / 0.35), 0 18px 50px -20px oklch(0.55 0.165 22 / 0.45);
+  --gradient-emerald: linear-gradient(135deg, oklch(0.24 0.08 18), oklch(0.4 0.145 20) 55%, oklch(0.53 0.17 22));
+  --gradient-gold: linear-gradient(100deg, oklch(0.73 0.1 72), oklch(0.91 0.075 86) 45%, oklch(0.73 0.1 72));
 }
+
 
 @layer base {
   * {
@@ -93,8 +94,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(60rem 40rem at 100% -10%, oklch(0.55 0.11 168 / 0.1), transparent 60%),
-      radial-gradient(50rem 34rem at 0% 10%, oklch(0.76 0.1 84 / 0.12), transparent 60%);
+      radial-gradient(60rem 40rem at 100% -10%, oklch(0.55 0.165 22 / 0.12), transparent 60%),
+      radial-gradient(50rem 34rem at 0% 10%, oklch(0.77 0.1 78 / 0.12), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -105,7 +106,7 @@
   }
 
   ::selection {
-    background: oklch(0.76 0.1 84 / 0.35);
+    background: oklch(0.77 0.1 78 / 0.35);
   }
 }
 
