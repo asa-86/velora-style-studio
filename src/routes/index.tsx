@@ -39,7 +39,7 @@ function Home() {
             <span className="pointer-events-none absolute -bottom-20 right-0 size-64 rounded-full bg-emerald-bright/15 blur-3xl" />
             <p className="text-gold-gradient relative text-[11px] font-bold tracking-[0.5em]">VELORA · SS۲۶</p>
             <h1 className="relative mt-5 text-3xl font-extrabold leading-[1.35] md:text-6xl">
-              زمرد را
+              یاقوت را
               <span className="mx-2 inline-block bg-primary px-3 py-1 text-primary-foreground [border-radius:1rem_0.25rem_1rem_0.25rem]">
                 بپوش
               </span>
@@ -47,7 +47,7 @@ function Home() {
               درخشش را زندگی کن
             </h1>
             <p className="relative mt-6 max-w-xl text-sm leading-8 text-muted-foreground md:text-base">
-              کلکسیون جدید ولورا با الهام از سنگ زمرد و طلا؛ سبز عمیق، ایوُری گرم و جزئیاتی که در نور می‌درخشند. پارچه‌های
+              کلکسیون جدید ولورا با الهام از سنگ یاقوت و طلا؛ زرشکی عمیق، ایوُری گرم و جزئیاتی که در نور می‌درخشند. پارچه‌های
               منتخب، دوخت دقیق و برش‌هایی که روی هر اندامی زیبا می‌نشیند.
             </p>
             <div className="relative mt-8 flex flex-wrap gap-3">
@@ -72,7 +72,7 @@ function Home() {
           <div className="fade-up relative overflow-hidden rounded-[2rem] shadow-lift col-span-2 md:col-span-2 md:row-span-2">
             <img
               src={heroImage}
-              alt="استایل کلکسیون جدید ولورا؛ پالتو کتان کرم و شلوار سبز تیره"
+              alt="استایل کلکسیون جدید ولورا؛ پالتو کتان کرم و شلوار زرشکی تیره"
               width={1408}
               height={1760}
               className="aspect-[4/5] size-full object-cover transition-transform duration-[1200ms] hover:scale-105 md:aspect-auto"

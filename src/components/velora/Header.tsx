@@ -25,7 +25,7 @@ export function Header() {
                   <Sparkles className="size-3 text-gold-light" /> ارسال به سراسر ایران
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Sparkles className="size-3 text-gold-light" /> کلکسیون زمرد · SS۲۶
+                  <Sparkles className="size-3 text-gold-light" /> کلکسیون یاقوت · SS۲۶
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <Sparkles className="size-3 text-gold-light" /> ۷ روز مهلت تعویض
