@@ -6,10 +6,20 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Inside Lovable (preview/publish) the managed Nitro build must stay untouched.
+// Outside it, we skip Nitro entirely so `npm run build` emits a plain static
+// site into `dist/` instead of a server bundle in `.output/`.
+const isLovableBuild =
+  process.env["LOVABLE_SANDBOX"] === "1" || !!process.env["DEV_SERVER__PROJECT_PATH"];
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Outside Lovable: the app has no server functions, so every route is
+    // prerendered to static HTML that any ordinary static host can serve.
+    ...(isLovableBuild ? {} : { prerender: { enabled: true, crawlLinks: true } }),
   },
+  ...(isLovableBuild ? {} : { nitro: false as const }),
 });
