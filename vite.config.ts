@@ -17,9 +17,9 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // The app has no server functions, so every route is prerendered to static
-    // HTML — the result can be hosted on any ordinary static host.
-    prerender: { enabled: true, crawlLinks: true },
+    // Outside Lovable: the app has no server functions, so every route is
+    // prerendered to static HTML that any ordinary static host can serve.
+    ...(isLovableBuild ? {} : { prerender: { enabled: true, crawlLinks: true } }),
   },
   ...(isLovableBuild ? {} : { nitro: false as const }),
 });
