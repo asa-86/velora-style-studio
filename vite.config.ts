@@ -15,13 +15,5 @@ export default defineConfig({
     // static HTML for plain static hosting.
     prerender: { enabled: true, crawlLinks: true },
   },
-  // Emit the deployable build into `dist/` instead of Nitro's default `.output/`.
-  nitro: {
-    preset: "static",
-    output: {
-      dir: "dist",
-      publicDir: "dist",
-      serverDir: "dist/_nitro-server",
-    },
-  },
+  nitro: { preset: "static" },
 });
