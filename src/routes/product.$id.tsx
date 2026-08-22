@@ -80,13 +80,11 @@ function ProductPage() {
 
         <div className="mt-6 grid gap-8 md:grid-cols-2 md:gap-12">
           <div>
-            <div className="overflow-hidden rounded-lg border border-border bg-secondary">
+            <div className="flex min-h-[300px] items-center justify-center overflow-hidden rounded-lg border border-border bg-secondary">
               <img
                 src={product.images[active]}
                 alt={product.name}
-                width={1000}
-                height={1333}
-                className="aspect-[3/4] w-full object-cover"
+                className="max-h-[65vh] w-full object-contain"
               />
             </div>
             <div className="mt-3 grid grid-cols-4 gap-3">
@@ -97,11 +95,11 @@ function ProductPage() {
                   onClick={() => setActive(i)}
                   aria-label={`تصویر ${i + 1}`}
                   className={cn(
-                    "overflow-hidden rounded-md border transition-colors",
+                    "flex h-20 w-full items-center justify-center overflow-hidden rounded-md border transition-colors sm:h-24",
                     i === active ? "border-primary" : "border-border hover:border-primary/50",
                   )}
                 >
-                  <img src={src} alt="" loading="lazy" className="aspect-square w-full object-cover" />
+                  <img src={src} alt="" loading="lazy" className="h-full w-full object-contain" />
                 </button>
               ))}
             </div>
