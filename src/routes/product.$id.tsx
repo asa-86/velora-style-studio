@@ -95,11 +95,11 @@ function ProductPage() {
                   onClick={() => setActive(i)}
                   aria-label={`تصویر ${i + 1}`}
                   className={cn(
-                    "overflow-hidden rounded-md border transition-colors",
+                    "flex h-20 w-full items-center justify-center overflow-hidden rounded-md border transition-colors sm:h-24",
                     i === active ? "border-primary" : "border-border hover:border-primary/50",
                   )}
                 >
-                  <img src={src} alt="" loading="lazy" className="aspect-square w-full object-cover" />
+                  <img src={src} alt="" loading="lazy" className="h-full w-full object-contain" />
                 </button>
               ))}
             </div>
